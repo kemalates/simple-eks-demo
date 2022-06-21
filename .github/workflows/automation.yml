@@ -26,8 +26,7 @@ jobs:
       - name: Build and publish to Github Packages
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: ./simple-app/Dockerfile
+          context: ./simple-app
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
