@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: simple-eks-demo
+build:
+  artifacts:
+  - image: ghcr.io/kemalates/simple-eks-demo
+    context: simple-app
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/deployment.yml
